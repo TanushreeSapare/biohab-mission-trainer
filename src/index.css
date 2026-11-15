@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #090D16;
+    color: #F1F5F9;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0) scale(0.85);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-48px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes shieldPulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.012);
+  }
+}
+
+@keyframes stormRay {
+  0% {
+    transform: translateX(-18px) translateY(-18px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(48px) translateY(48px);
+    opacity: 0;
+  }
+}
+
+@keyframes dustDrift {
+  0% {
+    transform: translateX(-24px);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateX(36px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes botHover {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes growSway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.animate-bubble-1 {
+  animation: floatBubble 3.2s ease-in-out infinite;
+}
+.animate-bubble-2 {
+  animation: floatBubble 3.8s ease-in-out 1.1s infinite;
+}
+.animate-bubble-3 {
+  animation: floatBubble 2.9s ease-in-out 0.6s infinite;
+}
+.animate-shield-pulse {
+  animation: shieldPulse 2.8s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-storm-ray {
+  animation: stormRay 1.6s linear infinite;
+}
+.animate-dust-drift {
+  animation: dustDrift 3.6s ease-in-out infinite;
+}
+.animate-bot-hover {
+  animation: botHover 3s ease-in-out infinite;
+}
+.animate-plant-sway {
+  animation: growSway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bubble-1,
+  .animate-bubble-2,
+  .animate-bubble-3,
+  .animate-shield-pulse,
+  .animate-storm-ray,
+  .animate-dust-drift,
+  .animate-bot-hover,
+  .animate-plant-sway {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "BioHab: Junior Astronaut Mission Trainer",
+  "description": "An interactive NASA-inspired space habitat simulation for students ages 7-12 exploring power, bioregenerative life support, and radiation shielding trade-offs over a 10-Sol mission.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
